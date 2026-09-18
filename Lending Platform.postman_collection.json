@@ -1,0 +1,260 @@
+{
+  "info": {
+    "_postman_id": "86da6a96-4c5b-4ff5-b494-207c2d9f275c",
+    "name": "Lending Platform",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "38201782"
+  },
+  "item": [
+    {
+      "name": "Form",
+      "item": [
+        {
+          "name": "Loan Eligibility",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Loan Eligibility",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"customerName\": \"Dhruv\",\n  \"loanAmount\": 500000,\n  \"assetValue\": 1000000,\n  \"creditScore\": 800\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "http://localhost:5019/api/Application",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5019",
+                  "path": [
+                    "api",
+                    "Application"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Fri, 18 Sep 2026 15:49:28 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "Kestrel"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 5,\n  \"customerName\": \"Dhruv\",\n  \"loanAmount\": 500000,\n  \"assetValue\": 1000000,\n  \"creditScore\": 800,\n  \"ltv\": 50,\n  \"decision\": \"Successful\",\n  \"createdAt\": \"2026-09-18T15:49:27.7720314Z\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Statistics",
+      "item": [
+        {
+          "name": "Dashboard All",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Dashboard All",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5019/api/Statistics/dashboard",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5019",
+                  "path": [
+                    "api",
+                    "Statistics",
+                    "dashboard"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Fri, 18 Sep 2026 15:51:49 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "Kestrel"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"statistics\": {\n    \"totalApplicants\": 3,\n    \"successfulApplicants\": 2,\n    \"declinedApplicants\": 1,\n    \"totalLoanValue\": 1000000,\n    \"meanLtv\": 63.333333333333336\n  },\n  \"applications\": [\n    {\n      \"id\": 3,\n      \"customerName\": \"Aryan\",\n      \"loanAmount\": 500000,\n      \"assetValue\": 1000000,\n      \"creditScore\": 800,\n      \"ltv\": 50,\n      \"decision\": \"Successful\",\n      \"createdAt\": \"2026-09-18T15:06:59.746971Z\"\n    },\n    {\n      \"id\": 4,\n      \"customerName\": \"Priya\",\n      \"loanAmount\": 900000,\n      \"assetValue\": 1000000,\n      \"creditScore\": 800,\n      \"ltv\": 90,\n      \"decision\": \"Declined\",\n      \"createdAt\": \"2026-09-18T15:08:05.554364Z\"\n    },\n    {\n      \"id\": 5,\n      \"customerName\": \"Dhruv\",\n      \"loanAmount\": 500000,\n      \"assetValue\": 1000000,\n      \"creditScore\": 800,\n      \"ltv\": 50,\n      \"decision\": \"Successful\",\n      \"createdAt\": \"2026-09-18T15:49:27.772031Z\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Dashboard Successful",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Dashboard Successful",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5019/api/Statistics/dashboard?decision=Successful",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5019",
+                  "path": [
+                    "api",
+                    "Statistics",
+                    "dashboard"
+                  ],
+                  "query": [
+                    {
+                      "key": "decision",
+                      "value": "Successful"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Fri, 18 Sep 2026 15:53:42 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "Kestrel"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"statistics\": {\n    \"totalApplicants\": 3,\n    \"successfulApplicants\": 2,\n    \"declinedApplicants\": 1,\n    \"totalLoanValue\": 1000000,\n    \"meanLtv\": 63.333333333333336\n  },\n  \"applications\": [\n    {\n      \"id\": 3,\n      \"customerName\": \"Aryan\",\n      \"loanAmount\": 500000,\n      \"assetValue\": 1000000,\n      \"creditScore\": 800,\n      \"ltv\": 50,\n      \"decision\": \"Successful\",\n      \"createdAt\": \"2026-09-18T15:06:59.746971Z\"\n    },\n    {\n      \"id\": 5,\n      \"customerName\": \"Dhruv\",\n      \"loanAmount\": 500000,\n      \"assetValue\": 1000000,\n      \"creditScore\": 800,\n      \"ltv\": 50,\n      \"decision\": \"Successful\",\n      \"createdAt\": \"2026-09-18T15:49:27.772031Z\"\n    }\n  ]\n}"
+            }
+          ]
+        },
+        {
+          "name": "Dashboard Declined",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": ""
+            }
+          },
+          "response": [
+            {
+              "name": "Dashboard Declined",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "http://localhost:5019/api/Statistics/dashboard?decision=Declined",
+                  "protocol": "http",
+                  "host": [
+                    "localhost"
+                  ],
+                  "port": "5019",
+                  "path": [
+                    "api",
+                    "Statistics",
+                    "dashboard"
+                  ],
+                  "query": [
+                    {
+                      "key": "decision",
+                      "value": "Declined"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "content-type",
+                  "value": "application/json; charset=utf-8"
+                },
+                {
+                  "key": "date",
+                  "value": "Fri, 18 Sep 2026 15:54:33 GMT"
+                },
+                {
+                  "key": "server",
+                  "value": "Kestrel"
+                },
+                {
+                  "key": "transfer-encoding",
+                  "value": "chunked"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"statistics\": {\n    \"totalApplicants\": 3,\n    \"successfulApplicants\": 2,\n    \"declinedApplicants\": 1,\n    \"totalLoanValue\": 1000000,\n    \"meanLtv\": 63.333333333333336\n  },\n  \"applications\": [\n    {\n      \"id\": 4,\n      \"customerName\": \"Priya\",\n      \"loanAmount\": 900000,\n      \"assetValue\": 1000000,\n      \"creditScore\": 800,\n      \"ltv\": 90,\n      \"decision\": \"Declined\",\n      \"createdAt\": \"2026-09-18T15:08:05.554364Z\"\n    }\n  ]\n}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
