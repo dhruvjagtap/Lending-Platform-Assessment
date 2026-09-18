@@ -16,7 +16,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("ReactPolicy", policy =>
     {
         policy
-            .WithOrigins("http://localhost:5173", "lendingplatform.vercel.app")
+            .WithOrigins("http://localhost:5173", "https://lendingplatform.vercel.app")
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
