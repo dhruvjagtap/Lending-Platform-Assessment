@@ -8,6 +8,19 @@ The project was built as part of an engineering technical assessment.
 
 ---
 
+## Live Demo
+
+**Frontend:** https://lendingplatform.vercel.app/
+**Backend:** https://lending-platform-assessment.onrender.com/
+
+The application calculates the applicant's Loan-to-Value (LTV), applies the required lending rules, stores the application result, and provides a small dashboard showing overall application statistics.
+
+The project was built as part of an engineering technical assessment.
+
+> **Deployment Note:** The application is deployed using free-tier hosting services. The backend may take a few seconds to respond after a period of inactivity due to the hosting platform's free-tier behavior. Subsequent requests should respond normally.
+
+---
+
 ## Overview
 
 The platform accepts three inputs for a loan application:
@@ -469,38 +482,6 @@ This makes individual parts of the UI easier to change.
 
 ---
 
-# Assumptions
-
-A few assumptions were made while implementing the assessment:
-
-- An application is stored regardless of whether the final decision is successful or declined.
-- Total loan value refers to successfully written loans rather than the sum of all submitted loan amounts.
-- Mean LTV is calculated across all applications.
-- Credit score is expected to be between 1 and 999.
-- Loan amount and asset value are monetary values in GBP.
-- The asset value must be greater than zero to calculate LTV.
-- The frontend is intended for local development and demonstration rather than production deployment.
-
----
-
-# Possible Improvements for a Production Version
-
-This project is intentionally scoped to the requirements of the assessment. If this were developed further, some areas I would consider improving are:
-
-- Add automated unit tests covering the lending rules, especially boundary cases around 60%, 80%, 90%, and £1 million.
-- Add request validation and more detailed API error responses.
-- Add authentication and authorisation for different types of users.
-- Move configuration and secrets completely out of source-controlled configuration files.
-- Add structured logging for easier debugging and monitoring.
-- Add database indexes where required as the application grows.
-- Add pagination for application history.
-- Improve financial calculations by using appropriate decimal handling and validation for monetary values.
-- Make the frontend fully responsive across desktop, tablet, and mobile screen sizes.
-- Add production monitoring, health checks, and application metrics.
-- Consider using WebSockets or another real-time communication mechanism to immediately update statistics when a new application is submitted. This could be useful when multiple users are viewing the dashboard at the same time. For a smaller application, regular API refreshes may be simpler and more cost-effective, so the additional infrastructure would need to be justified by the actual usage requirements.
-
----
-
 # Screenshots
 
 Screenshots of the frontend are included in the project files.
@@ -512,16 +493,6 @@ The main UI includes:
 - Statistics dashboard
 
 Screenshots can be found under the frontend [screenshot](frontend/screenshots) directory.
-
----
-
-# AI Usage
-
-AI tools were used during development as an engineering aid, particularly for exploring implementation approaches, debugging, and reviewing parts of the code.
-
-The AI was not treated as the source of truth for the business requirements. The lending rules were checked against the assessment specification and the generated suggestions were reviewed and modified where necessary.
-
-A separate AI log is included with the submission containing the main prompts used, iterations, and examples of suggestions that were reviewed or corrected.
 
 ---
 
